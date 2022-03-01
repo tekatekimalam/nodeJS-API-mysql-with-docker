@@ -1,7 +1,7 @@
-import mysql from 'mysql'
-import dotenv from 'mysql'
+import mysql from "mysql";
+import dotenv from "mysql";
 
-dotenv.config()
+dotenv.config();
 
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
@@ -10,6 +10,6 @@ const pool = mysql.createPool({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     limit: process.env.DB_LIMIT,
-})
+});
 
 export default pool;
