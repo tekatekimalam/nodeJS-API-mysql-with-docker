@@ -3,6 +3,7 @@ import ip from "ip";
 import dotenv from "dotenv";
 import cors from "cors";
 import Response from "./domain/response.js";
+// import httpResponse from "./controller/patient.controller.js";
 import logger from "./util/logger.js";
 
 // Untuk meload seluruh environment variabel yang kita punya
