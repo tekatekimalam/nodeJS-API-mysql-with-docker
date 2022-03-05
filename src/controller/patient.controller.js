@@ -129,4 +129,27 @@ export const updatePatient = (req, res) => {
     });
 };
 
+export const deletePatient = (req, res) => {
+    database.query(QUERY.DELETE_PATIENT, [req.params.id], (error, result) => {
+        if (result.affectedRows > 0) {
+            res.status(httpStatus.OK.code).send(
+                new Response(
+                    httpStatus.OK.code,
+                    httpStatus.OK.status,
+                    `Patient deleted`,
+                    result[0]
+                )
+            );
+        } else {
+            res.status(httpStatus.NOT_FOUND.code).send(
+                new Response(
+                    httpStatus.NOT_FOUND.code,
+                    httpStatus.NOT_FOUND.status,
+                    `Patient not found`
+                )
+            );
+        }
+    });
+};
+
 export default httpStatus;
